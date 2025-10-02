@@ -7,9 +7,9 @@ app.use(express.json())
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.post('/', (req, res) => {
-    console.log(req.body)
-    res.json({ success: true })
+cron.schedule('* * * * *', () => {
+    console.log('Running a task in each and every task');
+    
 })
 
 app.listen(port, () => { 
